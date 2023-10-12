@@ -6,6 +6,8 @@ import com.maverick.speed.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class EmployeeService {
 
@@ -24,5 +26,9 @@ public class EmployeeService {
         addressService.addAddress(address);
 
         return savedEmployee;
+    }
+
+    public List<Employee> viewEmployee() {
+        return employeeRepository.findAll();
     }
 }
